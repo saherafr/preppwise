@@ -1,122 +1,111 @@
-# 🤖 Recruiter AI — Your AI Interview Partner
+# 🤖 RecruiterAI — Your AI Interview Partner
 
-Recruiter AI is a **fully voice-powered mock interview web app** that simulates realistic, high-pressure interview sessions — with instant feedback and performance scoring.
+**RecruiterAI (Preppwise)** is a fully voice-powered mock interview web app that simulates realistic, high-pressure interviews — with instant feedback and performance scoring. Built using **Next.js 15**, **Firebase Auth**, **Vapi.ai**, and **Google Gemini Pro**, it showcases how AI can scale personalized, professional interview prep.
 
-Built using **Next.js 15**, **Firebase Auth**, **Vapi.ai**, and **Tailwind CSS**, this project showcases how AI can be used to scale personalized, professional prep for technical interviews.
-
-Try it. Talk to it. Get better.
+🎙️ Try it. Talk to it. Get better.
 
 ---
 
+## 🔗 Live Demo  
+👉 [https://preppwise.vercel.app](https://preppwise.vercel.app)
 
-## 
-Try it here 👉 [https://preppwise.vercel.app](https://preppwise.vercel.app)
 ---
-
 
 ## ✨ Features
 
-- 🎙️ **Voice Interview Simulation** powered by Vapi.ai, Google Gemini API
-- 💬 Real-time **speech transcript capture** and animation
-- 📊 Instant **AI-generated feedback** with scoring, strengths, and improvement areas
-- 👤 Firebase **Email/Password Auth** and session cookies
-- 📚 Clean dashboard with past & suggested interviews
-- 📦 Dynamic data fetching and routing with Next.js App Router
-- 🌐 Deployed on Vercel for instant global access
+- 🎙️ **Voice Interview Simulation** using Vapi SDK + Google Gemini Pro API
+- 💬 Real-time **speech transcription** with speaking animation
+- 🧠 **AI-generated feedback** powered by Gemini for strengths, scoring & improvements
+- 👤 **Secure authentication** with Firebase Email/Password + session cookies
+- 📚 Dashboard with **past sessions & suggested interviews**
+- 🔄 Dynamic routing and SSR via Next.js App Router
+- 🌐 Deployed on Vercel for global access
 
 ---
 
 ## 🛠 Tech Stack
 
 - **Frontend**: Next.js 15 (App Router, SSR), Tailwind CSS
-- **Authentication**: Firebase Auth with custom session cookies
+- **Authentication**: Firebase Auth (email/password, session cookies)
 - **Database**: Firebase Firestore
-- **Voice AI**: Vapi SDK (custom workflow)
-- **UI Libraries**: Shadcn UI, Sonner for toast notifications
-- **Hosting**: Vercel (with environment config)
+- **Voice AI**: Vapi SDK
+- **LLM**: Google Gemini Pro API
+- **UI Libraries**: Shadcn UI, Sonner (toasts)
+- **Hosting**: Vercel
 
 ---
 
-## 🧠 Challenges I Faced & How I Solved Them
+## 🧠 Why Google Gemini?
 
-### 🔐 1. Firebase Admin SDK with Environment Variables
-**Problem**: Multi-line private keys from Firebase were breaking the `.env` format and causing PEM errors.
-
-**Solution**: Escaped `\n` characters manually. Used `"${process.env.FIREBASE_PRIVATE_KEY}"` format and verified line breaks were preserved in runtime.
-
----
-
-### 📦 2. Deployment Errors on Vercel with Firestore Admin
-**Problem**: `FIREBASE_PRIVATE_KEY` parsing failed silently during Vercel deployment.
-
-**Solution**: Made private key and client email public-readable via env and added Vercel secrets manually using the Vercel dashboard for safe interpolation.
+RecruiterAI uses **Google Gemini Pro API** to deliver intelligent, real-time feedback tailored to each user's spoken response. Unlike traditional rule-based systems, Gemini enables:
+- 🔍 Contextual scoring of answers
+- 📈 Natural-language suggestions
+- 🧠 Keyword matching for job-specific feedback
 
 ---
 
-### 🌐 3. Sign-in/Sign-up Redirect Loop
-**Problem**: After login, Vercel still showed old cached pages and forced `/` redirects due to session cookies not updating.
+## 💪 Challenges I Solved
 
-**Solution**: Used `cookies()` from `next/headers` to set & verify real-time session. Also cleared cookies in browser dev tools during debug.
-
----
-
-### 🧭 4. Dynamic Route 404s (e.g. `/interview/[id]/feedback`)
-**Problem**: Even though the folders existed in `app/(root)/interview/[id]/feedback`, pages returned 404 on refresh or direct URL access.
-
-**Solution**: Ensured all route segments matched actual structure, exported `page.tsx` correctly, and used `redirect()` only inside valid layout rendering context.
+### 🔐 1. Firebase Admin SDK & PEM Format
+**Problem**: Multi-line private keys caused `.env` errors in deployment  
+**Fix**: Escaped `\n` manually and wrapped keys with `""` to ensure proper runtime parsing
 
 ---
 
-### 📡 5. Real-Time Transcript Management
-**Problem**: Speech-to-text wasn’t syncing or displaying properly due to `useEffect` dependencies.
-
-**Solution**: Debounced `transcript` updates using `lastMessage` state with conditional animation triggering.
+### ⚠️ 2. Vercel Deployment Issues with Firestore Admin
+**Problem**: `FIREBASE_PRIVATE_KEY` failed silently  
+**Fix**: Added secrets manually in Vercel dashboard & verified key integrity in production
 
 ---
 
-### 📈 6. Git Push Conflicts
-**Problem**: GitHub rejected my push due to non-fast-forward changes.
+### 🔁 3. Sign-in Redirect Loop
+**Problem**: Post-login, stale cached data caused redirection issues  
+**Fix**: Implemented `cookies()` from `next/headers` for real-time session reads & write logic
 
-**Solution**: Used `git push origin main --force` after verifying I wanted to override remote history with my local changes.
+---
+
+### 🔍 4. Dynamic Route 404s
+**Problem**: Pages like `/interview/[id]/feedback` failed on reload  
+**Fix**: Verified correct file structure and export of `page.tsx`; ensured routes followed Next.js App Router conventions
+
+---
+
+### 🎙️ 5. Transcript Sync Errors
+**Problem**: Real-time speech transcript was out of sync with audio  
+**Fix**: Debounced updates using `lastMessage`, refined animation timing inside `useEffect`
+
+---
+
+### 🔃 6. Git Conflicts on Push
+**Problem**: Push rejected due to remote conflicts  
+**Fix**: Used `git push origin main --force` after ensuring changes were intended
 
 ---
 
 ## 🔮 Future Development Plans
 
-- 👥 **Multiple AI personas** for mock interviewers (friendly, tough, behavioral)
-- 📊 **Advanced analytics** with score trends and improvement charts
-- 🧾 **Resume & portfolio review** feature with AI insights
-- 🧑‍💼 **HR dashboard** to assign & review interview results
-- 🌎 **Multi-language support** (Spanish, Hindi, etc.)
-- 🧠 **Company-specific mock interviews** (e.g., Amazon-style rounds)
-- 📱 **React Native mobile version**
-- 🎥 **Session recording & playback**
-- 🧩 **Import your own question sets** (LeetCode, HackerRank)
+- 🧑‍💼 Multiple **AI interviewer personas** (tough, friendly, behavioral)
+- 📊 Performance **trend dashboard** with scoring history
+- 📄 **Resume & portfolio review** module using Gemini
+- 🧠 Company-specific interview modes (Amazon, Meta, etc.)
+- 🎥 Session **recording and playback**
+- 🌍 Multi-language support (Hindi, Spanish, etc.)
+- 📱 Mobile version with React Native
+- 🧩 Import custom question sets (LeetCode, HackerRank)
+- 👥 HR dashboard to assign and review candidate sessions
 
 ---
 
-## 🚀 Local Setup
+## 🚀 Local Development
 
 ```bash
 git clone https://github.com/saherafr/preppwise.git
 cd preppwise
 npm install
 npm run dev
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+---
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
