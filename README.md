@@ -7,6 +7,9 @@ Built using **Next.js 15**, **Firebase Auth**, **Vapi.ai**, and **Tailwind CSS**
 Try it. Talk to it. Get better.
 
 ---
+## 🚀 Live Demo
+Try it here 👉 [https://preppwise.vercel.app](https://preppwise.vercel.app)
+
 
 ## ✨ Features
 
