@@ -9,7 +9,7 @@ Try it. Talk to it. Get better.
 ---
 
 
-## 🚀 Live Demo
+## 
 Try it here 👉 [https://preppwise.vercel.app](https://preppwise.vercel.app)
 ---
 
