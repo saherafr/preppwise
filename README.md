@@ -10,6 +10,48 @@
 👉 [https://preppwise.vercel.app](https://preppwise.vercel.app)
 
 ---
+---
+
+## 🖼️ RecruiterAI Preview
+
+### 🔐 1. Signup & Login
+> Firebase Auth with session management
+![SignUp](https://github.com/user-attachments/assets/6c24bb96-9e61-4aee-8be8-7bd85ea2dd17)
+![SignIn](https://github.com/user-attachments/assets/41f3f9e5-a3a5-4fd6-b655-c82fc029f957)
+
+
+
+---
+
+### 📱 2. Mobile Landing
+> Responsive UI for quick access to mock interviews
+
+![Mobile Landing](.![IMG_5002 2](https://github.com/user-attachments/assets/b4eb78c2-ed9e-46e8-9ef6-fa9dca8ff3dc)
+..)
+
+---
+
+### 🌐 3. Explore Public Interviews
+> Company-specific interview sets (e.g., Spotify, TikTok)
+
+![Public Interviews](![IMG_5003 2](https://github.com/user-attachments/assets/3bc2e4c0-6add-4efb-960c-696eb4856cec)
+...)
+
+---
+
+### 🎤 4. AI Interview Mode
+> Choose between AI Interviewer or Interview Prep
+<img width="1440" alt="Screenshot 2025-05-10 at 5 30 39 PM" src="https://github.com/user-attachments/assets/9ad5b085-a0e0-4f85-af53-c6c5a118f46d" />
+
+![Interview Mode](...)
+
+---
+
+### 📊 5. AI Feedback Page
+> Google Gemini-generated final score & breakdown
+![FeedBack](https://github.com/user-attachments/assets/a33b0e93-8265-4711-acc2-19db0643ab46)
+
+---
 
 ## ✨ Features
 
