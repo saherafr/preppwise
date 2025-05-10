@@ -332,3 +332,19 @@
     transform: translateY(0);
   }
 }
+@keyframes backgroundMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-backgroundMove {
+  background-size: 200% 200%;
+  animation: backgroundMove 18s ease infinite;
+}

@@ -8,7 +8,6 @@ import { cn } from "@/lib/utils";
 import { vapi } from "@/lib/vapi.sdk";
 import { interviewer } from "@/constants";
 import { createFeedback } from "@/lib/actions/general.actions";
-//mport {vapi} from "@/lib/actions/vapi.sdk";
 
 enum CallStatus {
     INACTIVE = "INACTIVE",
@@ -124,8 +123,6 @@ const Agent = ({
                     username: userName,
                     userid: userId,
                 },
-                clientMessages: [],
-                serverMessages: []
             });
         } else {
             let formattedQuestions = "";
@@ -139,8 +136,6 @@ const Agent = ({
                 variableValues: {
                     questions: formattedQuestions,
                 },
-                clientMessages: [],
-                serverMessages: []
             });
         }
     };
