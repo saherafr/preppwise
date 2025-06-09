@@ -1,20 +1,20 @@
-# 🤖 RecruiterAI — Your AI Interview Partner
+#  RecruiterAI — Your AI Interview Partner
 
 **RecruiterAI (Preppwise)** is a fully voice-powered mock interview web app that simulates realistic, high-pressure interviews — with instant feedback and performance scoring. Built using **Next.js 15**, **Firebase Auth**, **Vapi.ai**, and **Google Gemini Pro**, it showcases how AI can scale personalized, professional interview prep.
 
-🎙️ Try it. Talk to it. Get better.
+ Try it. Talk to it. Get better.
 
 ---
 
-## 🔗 Live Demo  
+##  Live Demo  
 👉 [https://preppwise.vercel.app](https://preppwise.vercel.app)
 
 ---
 ---
 
-## 🖼️ RecruiterAI Preview
+##  RecruiterAI Preview
 
-### 🔐 1. Signup & Login
+###  1. Signup & Login
 > Firebase Auth with session management
 ![SignUp](https://github.com/user-attachments/assets/6c24bb96-9e61-4aee-8be8-7bd85ea2dd17)
 ![SignIn](https://github.com/user-attachments/assets/41f3f9e5-a3a5-4fd6-b655-c82fc029f957)
@@ -23,7 +23,7 @@
 
 ---
 
-### 📱 2. Mobile Landing
+###  2. Mobile Landing
 > Responsive UI for quick access to mock interviews
 
 ![Mobile Landing](.![IMG_5002 2](https://github.com/user-attachments/assets/b4eb78c2-ed9e-46e8-9ef6-fa9dca8ff3dc)
@@ -31,7 +31,7 @@
 
 ---
 
-### 🌐 3. Explore Public Interviews
+###  3. Explore Public Interviews
 > Company-specific interview sets (e.g., Spotify, TikTok)
 
 ![Public Interviews](![IMG_5003 2](https://github.com/user-attachments/assets/3bc2e4c0-6add-4efb-960c-696eb4856cec)
@@ -39,7 +39,7 @@
 
 ---
 
-### 🎤 4. AI Interview Mode
+###  4. AI Interview Mode
 > Choose between AI Interviewer or Interview Prep
 <img width="1440" alt="Screenshot 2025-05-10 at 5 30 39 PM" src="https://github.com/user-attachments/assets/9ad5b085-a0e0-4f85-af53-c6c5a118f46d" />
 
@@ -47,7 +47,7 @@
 
 ---
 
-### 📊 5. AI Feedback Page
+###  5. AI Feedback Page
 > Google Gemini-generated final score & breakdown
 ![FeedBack](https://github.com/user-attachments/assets/a33b0e93-8265-4711-acc2-19db0643ab46)
 
@@ -55,17 +55,17 @@
 
 ## ✨ Features
 
-- 🎙️ **Voice Interview Simulation** using Vapi SDK + Google Gemini Pro API
-- 💬 Real-time **speech transcription** with speaking animation
-- 🧠 **AI-generated feedback** powered by Gemini for strengths, scoring & improvements
-- 👤 **Secure authentication** with Firebase Email/Password + session cookies
-- 📚 Dashboard with **past sessions & suggested interviews**
-- 🔄 Dynamic routing and SSR via Next.js App Router
-- 🌐 Deployed on Vercel for global access
+-  **Voice Interview Simulation** using Vapi SDK + Google Gemini Pro API
+-  Real-time **speech transcription** with speaking animation
+-  **AI-generated feedback** powered by Gemini for strengths, scoring & improvements
+-  **Secure authentication** with Firebase Email/Password + session cookies
+-  Dashboard with **past sessions & suggested interviews**
+-  Dynamic routing and SSR via Next.js App Router
+-  Deployed on Vercel for global access
 
 ---
 
-## 🛠 Tech Stack
+##  Tech Stack
 
 - **Frontend**: Next.js 15 (App Router, SSR), Tailwind CSS
 - **Authentication**: Firebase Auth (email/password, session cookies)
@@ -77,68 +77,68 @@
 
 ---
 
-## 🧠 Why Google Gemini?
+##  Why Google Gemini?
 
 RecruiterAI uses **Google Gemini Pro API** to deliver intelligent, real-time feedback tailored to each user's spoken response. Unlike traditional rule-based systems, Gemini enables:
-- 🔍 Contextual scoring of answers
-- 📈 Natural-language suggestions
-- 🧠 Keyword matching for job-specific feedback
+-  Contextual scoring of answers
+-  Natural-language suggestions
+-  Keyword matching for job-specific feedback
 
 ---
 
 ## 💪 Challenges I Solved
 
-### 🔐 1. Firebase Admin SDK & PEM Format
+###  1. Firebase Admin SDK & PEM Format
 **Problem**: Multi-line private keys caused `.env` errors in deployment  
 **Fix**: Escaped `\n` manually and wrapped keys with `""` to ensure proper runtime parsing
 
 ---
 
-### ⚠️ 2. Vercel Deployment Issues with Firestore Admin
+### ⚠ 2. Vercel Deployment Issues with Firestore Admin
 **Problem**: `FIREBASE_PRIVATE_KEY` failed silently  
 **Fix**: Added secrets manually in Vercel dashboard & verified key integrity in production
 
 ---
 
-### 🔁 3. Sign-in Redirect Loop
+###  3. Sign-in Redirect Loop
 **Problem**: Post-login, stale cached data caused redirection issues  
 **Fix**: Implemented `cookies()` from `next/headers` for real-time session reads & write logic
 
 ---
 
-### 🔍 4. Dynamic Route 404s
+###  4. Dynamic Route 404s
 **Problem**: Pages like `/interview/[id]/feedback` failed on reload  
 **Fix**: Verified correct file structure and export of `page.tsx`; ensured routes followed Next.js App Router conventions
 
 ---
 
-### 🎙️ 5. Transcript Sync Errors
+###  5. Transcript Sync Errors
 **Problem**: Real-time speech transcript was out of sync with audio  
 **Fix**: Debounced updates using `lastMessage`, refined animation timing inside `useEffect`
 
 ---
 
-### 🔃 6. Git Conflicts on Push
+###  6. Git Conflicts on Push
 **Problem**: Push rejected due to remote conflicts  
 **Fix**: Used `git push origin main --force` after ensuring changes were intended
 
 ---
 
-## 🔮 Future Development Plans
+##  Future Development Plans
 
-- 🧑‍💼 Multiple **AI interviewer personas** (tough, friendly, behavioral)
-- 📊 Performance **trend dashboard** with scoring history
-- 📄 **Resume & portfolio review** module using Gemini
-- 🧠 Company-specific interview modes (Amazon, Meta, etc.)
-- 🎥 Session **recording and playback**
-- 🌍 Multi-language support (Hindi, Spanish, etc.)
-- 📱 Mobile version with React Native
-- 🧩 Import custom question sets (LeetCode, HackerRank)
-- 👥 HR dashboard to assign and review candidate sessions
+-  Multiple **AI interviewer personas** (tough, friendly, behavioral)
+-  Performance **trend dashboard** with scoring history
+-  **Resume & portfolio review** module using Gemini
+-  Company-specific interview modes (Amazon, Meta, etc.)
+-  Session **recording and playback**
+-  Multi-language support (Hindi, Spanish, etc.)
+-  Mobile version with React Native
+-  Import custom question sets (LeetCode, HackerRank)
+-  HR dashboard to assign and review candidate sessions
 
 ---
 
-## 🚀 Local Development
+##  Local Development
 
 ```bash
 git clone https://github.com/saherafr/preppwise.git
